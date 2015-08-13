@@ -8,13 +8,9 @@
 
     function functionName($scope, $http) {
 
-        console.log('hi');
+        $http.get('data/projects.json').success(function(data) {
 
-        $http.get('data/time.json').success(function(data) {
-
-            console.log(data);
-
-            $scope.phones = data;
+            $scope.projects = data;
 
         })
 

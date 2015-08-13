@@ -1,10 +1,11 @@
 {{ 'welcome to the api page' }}
 
+<pre>{{ dataArray }}</pre>
+
 <input type="text" ng-model="limit">
 
-<ul>
-    <li ng-repeat="phone in phones | filter:limit">
-        <span>{{ phone.user_firstname }}</span><br />
-        <span>{{ phone.comment }}</span>
-    </li>
-</ul>
+<div ng-repeat="project in projects | filter:limit" style="padding:20px;margin:10px;border:1px solid grey;">
+    <h4>{{ project.title }}</h4>
+    <a href="{{ project.link }}">{{ project.link }}</a>
+    <div>{{ project.short_description }}</div>
+</div>
