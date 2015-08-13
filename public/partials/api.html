@@ -1,1 +1,10 @@
 {{ 'welcome to the api page' }}
+
+<input type="text" ng-model="limit">
+
+<ul>
+    <li ng-repeat="phone in phones | filter:limit">
+        <span>{{ phone.user_firstname }}</span><br />
+        <span>{{ phone.comment }}</span>
+    </li>
+</ul>

@@ -11,12 +11,10 @@ var angularResource = require('angular-resource');
     angular
     .module('testAngularApp', [
         'ngRoute',
-        'ngResource'
     ]);
 
 })();
 
 var routes = require('./config/routes');
-// var api = require('./services/api');
 var myFirstController = require('./controllers/myFirstController');
-// var mySecondController = require('./controllers/mySecondController');
+var mySecondController = require('./controllers/mySecondController');

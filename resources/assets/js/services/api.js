@@ -1,21 +1,21 @@
 (function() {
 
-  'use strict';
+    'use strict';
 
-  angular
-    .module('testAngularApp', [
-        'ngResource'
-    ])
-    .factory('api', functionName);
-
-    function functionName($resource) {
-
-        var results = $resource('data/time.json');
-
-        console.log(results);
-
-        return results;
-
-    }
+    angular
+        .module('testAngularApp')
+        .factory('api', ['$resource',
+            function($resource) {
+                return $resource('phones/:phoneId.json', {}, {
+                    query: {
+                        method: 'GET',
+                        params: {
+                            phoneId: 'phones'
+                        },
+                        isArray: true
+                    }
+                });
+            }
+        ]);
 
 })();

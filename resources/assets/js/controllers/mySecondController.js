@@ -1,15 +1,23 @@
-// (function() {
+(function() {
 
-//   'use strict';
+  'use strict';
 
-//   angular
-//     .module('testAngularApp')
-//     .controller('mySecondController', functionName);
+  angular
+    .module('testAngularApp')
+    .controller('mySecondController', functionName);
 
-//     function functionName(api) {
+    function functionName($scope, $http) {
 
-//         console.log('hi');
+        console.log('hi');
 
-//     }
+        $http.get('data/time.json').success(function(data) {
 
-// })();
+            console.log(data);
+
+            $scope.phones = data;
+
+        })
+
+    }
+
+})();
