@@ -6,15 +6,28 @@ var angularResource = require('angular-resource');
 
     'use strict';
 
-    console.log('We made it this far at least.');
-
     angular
     .module('testAngularApp', [
-        'ngRoute',
-    ]);
+      'ngRoute',
+      'ngResource'
+    ])
+    .config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider
+                .when('/list', {
+                    templateUrl: 'partials/list.html',
+                    controller: 'myFirstController'
+                })
+                .when('/api', {
+                    templateUrl: 'partials/api.html',
+                    controller: 'mySecondController'
+                })
+                .otherwise({
+                    redirectTo: '/list'
+                });
+    }]);
 
 })();
 
-var routes = require('./config/routes');
 var myFirstController = require('./controllers/myFirstController');
 var mySecondController = require('./controllers/mySecondController');

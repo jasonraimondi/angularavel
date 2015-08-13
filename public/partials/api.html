@@ -1,10 +1,8 @@
-{{ 'welcome to the api page' }}
-
-<pre>{{ dataArray }}</pre>
+<pre>{{ projects }}</pre>
 
 <input type="text" ng-model="limit">
 
-<div ng-repeat="project in projects | filter:limit" style="padding:20px;margin:10px;border:1px solid grey;">
+<div ng-repeat="project in projects | orderBy:'order'| filter:limit">
     <h4>{{ project.title }}</h4>
     <a href="{{ project.link }}">{{ project.link }}</a>
     <div>{{ project.short_description }}</div>
