@@ -1,20 +1,20 @@
 (function() {
 
-  'use strict';
+	'use strict';
 
-  angular
-    .module('testAngularApp')
-    .controller('mySecondController', functionName);
+	angular
+		.module('testAngularApp')
+		.controller('mySecondController', functionName);
 
-    function functionName($scope, $http) {
+	function functionName($scope, $http) {
 
 
-        $http.get('data/projects.json').success(function(data) {
+		$http.get('data/projects.json').success(function(data) {
 
-            $scope.projects = data;
+			$scope.projects = data;
 
-        })
+		})
 
-    }
+	}
 
 })();
