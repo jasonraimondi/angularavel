@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::group(array('prefix' => 'api/v1/'), function() {
+    Route::resource('projects', 'ProjectsController');
+});

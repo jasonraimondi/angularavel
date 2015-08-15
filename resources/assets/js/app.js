@@ -9,9 +9,14 @@ var angularRoute = require('angular-route');
 		.module('testAngularApp', [
 			'ngRoute',
 		])
+        .constant("CSRF_TOKEN", '{{ csrf_token() }}')
 		.config(['$routeProvider',
 			function($routeProvider) {
 				$routeProvider
+                    .when('/projects/create', {
+                        templateUrl: 'partials/projects/create.html',
+                        controller: 'myFirstController'
+                    })
 					.when('/list', {
 						templateUrl: 'partials/list.html',
 						controller: 'myFirstController'
@@ -21,7 +26,7 @@ var angularRoute = require('angular-route');
 						controller: 'mySecondController'
 					})
 					.otherwise({
-						redirectTo: '/list'
+						redirectTo: '/projects/create'
 					});
 			}
 		]);

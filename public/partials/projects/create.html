@@ -1,0 +1,37 @@
+<section class="row">
+    <article class="column">
+
+        <h1>New Project</h1>
+
+        <form ng-submit="addProject()">
+
+
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" ng-model="newProjectTitle">
+
+            <label for="link">Link</label>
+            <input type="text" name="link" id="link" ng-model="newProjectLink">
+
+            <label for="featured_image">Featured Image</label>
+            <input type="text" name="featured_image" id="featured_image" ng-model="newProjectFeaturedImage">
+
+            <label for="short_description">Short Description</label>
+            <input type="text" name="short_description" id="short_description" ng-model="newProjectShortDescription">
+
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description" ng-model="newProjectDescription">
+
+            <label for="active">Active</label>
+            <input type="checkbox" name="active" id="active" ng-model="newProjectActive">
+
+            <br>
+
+            <label for="order">Order</label>
+            <input type="number" name="order" id="order" ng-model="newProjectOrder">
+
+            <button>Submit</button>
+
+        </form>
+
+    </article>
+</section>
